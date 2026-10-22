@@ -118,11 +118,37 @@ final class NativeLibrary implements ControllerNavigation.Target,InputManager.In
     @Override public void section(int delta){int index=screen.equals("settings")?2:section.equals("Recent")?1:0;index=(index+delta+3)%3;if(index==2)settings();else{section=index==0?"Library":"Recent";screen="library";show();}}
     @Override public void search(){if(!screen.equals("library")){screen="library";show();}search.setVisibility(View.VISIBLE);search.requestFocus();((InputMethodManager)activity.getSystemService(android.content.Context.INPUT_METHOD_SERVICE)).showSoftInput(search,InputMethodManager.SHOW_IMPLICIT);}
     @Override public void recent(){section="Recent";screen="library";show();}
-    void dialog(AlertDialog dialog){
+    void dialog(AlertDialog dialog) {
         controls.stop();
-        dialog.setOnShowListener(d->{ViewGroup decor=(ViewGroup)dialog.getWindow().getDecorView();decor.post(()->ControllerFocus.ensure(decor,decor,dialog.getListView()!=null?dialog.getListView():dialog.getButton(AlertDialog.BUTTON_NEGATIVE)));});
-        dialog.setOnKeyListener((d,key,event)->{
-        if(key>=KeyEvent.KEYCODE_DPAD_UP&&key<=KeyEvent.KEYCODE_DPAD_RIGHT){if(event.getAction()==KeyEvent.ACTION_DOWN){ViewGroup decor=(ViewGroup)dialog.getWindow().getDecorView();ControllerFocus.move(decor,decor,dialog.getListView(),key);}return true;}if(key==(controls.swap?KeyEvent.KEYCODE_BUTTON_A:KeyEvent.KEYCODE_BUTTON_B)){if(event.getAction()==KeyEvent.ACTION_UP)dialog.dismiss();return true;}if(key==(controls.swap?KeyEvent.KEYCODE_BUTTON_B:KeyEvent.KEYCODE_BUTTON_A)){View focus=dialog.getCurrentFocus();if(event.getAction()==KeyEvent.ACTION_UP&&focus!=null){if(focus instanceof ListView){ListView list=(ListView)focus;int selected=list.getSelectedItemPosition();if(selected>=0)list.performItemClick(list.getSelectedView(),selected,list.getItemIdAtPosition(selected));}else focus.performClick();}return true;}return false;});}
+        // Ignore the release of the A/B press which opened this dialog.
+        // Only a press begun inside this window may activate or dismiss it.
+        final boolean[] confirmPressed={false}, backPressed={false};
+        dialog.setOnShowListener(d -> { ViewGroup decor=(ViewGroup)dialog.getWindow().getDecorView(); decor.post(() -> ControllerFocus.ensure(decor,decor,dialog.getListView()!=null?dialog.getListView():dialog.getButton(AlertDialog.BUTTON_NEGATIVE))); });
+        dialog.setOnKeyListener((d,key,event) -> {
+            if(key>=KeyEvent.KEYCODE_DPAD_UP && key<=KeyEvent.KEYCODE_DPAD_RIGHT) {
+                if(event.getAction()==KeyEvent.ACTION_DOWN) { ViewGroup decor=(ViewGroup)dialog.getWindow().getDecorView(); ControllerFocus.move(decor,decor,dialog.getListView(),key); }
+                return true;
+            }
+            if(key==(controls.swap?KeyEvent.KEYCODE_BUTTON_A:KeyEvent.KEYCODE_BUTTON_B)) {
+                if(event.getAction()==KeyEvent.ACTION_DOWN && event.getRepeatCount()==0) backPressed[0]=true;
+                else if(event.getAction()==KeyEvent.ACTION_UP) { boolean dismiss=backPressed[0]&&!event.isCanceled();backPressed[0]=false;if(dismiss)dialog.dismiss(); }
+                return true;
+            }
+            if(key==(controls.swap?KeyEvent.KEYCODE_BUTTON_B:KeyEvent.KEYCODE_BUTTON_A)) {
+                if(event.getAction()==KeyEvent.ACTION_DOWN && event.getRepeatCount()==0) confirmPressed[0]=true;
+                else if(event.getAction()==KeyEvent.ACTION_UP) {
+                    boolean activate=confirmPressed[0]&&!event.isCanceled();confirmPressed[0]=false;
+                    View focus=dialog.getCurrentFocus();
+                    if(activate&&focus!=null) {
+                        if(focus instanceof ListView) { ListView list=(ListView)focus;int selected=list.getSelectedItemPosition();if(selected>=0)list.performItemClick(list.getSelectedView(),selected,list.getItemIdAtPosition(selected)); }
+                        else focus.performClick();
+                    }
+                }
+                return true;
+            }
+            return false;
+        });
+    }
     void message(String message){if(status!=null)status.setText(message);}
     void suspend(){controls.stop();}
     void stopInput(){controls.stop();}

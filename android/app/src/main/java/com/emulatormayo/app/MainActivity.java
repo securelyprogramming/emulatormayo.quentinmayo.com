@@ -39,7 +39,7 @@ public final class MainActivity extends ComponentActivity {
 
     @Override public void onCreate(Bundle saved){
         super.onCreate(saved);prefs=getSharedPreferences("emulatormayo",MODE_PRIVATE);store=new GameStore(this,prefs);pendingCore=prefs.getString("pickerCore","nes");pendingBios=prefs.getString("pickerBios","");
-        root=new LinearLayout(this);root.setOrientation(LinearLayout.VERTICAL);root.setBackgroundColor(Color.rgb(14,21,30));
+        root=new LinearLayout(this);root.setOrientation(LinearLayout.VERTICAL);root.setBackgroundColor(getColor(R.color.mayo_background));
         root.setOnApplyWindowInsetsListener((view,insets)->{view.setPadding(insets.getSystemWindowInsetLeft(),insets.getSystemWindowInsetTop(),insets.getSystemWindowInsetRight(),insets.getSystemWindowInsetBottom());return insets;});
         setContentView(root);WebView.setWebContentsDebuggingEnabled(BuildConfig.DEBUG);
         library=new NativeLibrary(this,root,store,prefs);library.show();

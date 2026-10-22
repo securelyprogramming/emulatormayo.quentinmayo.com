@@ -40,5 +40,5 @@ shutil.copyfile(ROOT.parent / 'LICENSE', ROOT / 'LICENSE')
 for name in ['index.html', 'style.css', 'player.js']:
     shutil.copyfile(ROOT.parent / 'selfhost' / 'site' / name, player / name)
 page = player / 'index.html'
-page.write_text(page.read_text().replace('PRIVATE PLAYER · EMULATORJS 4.2.3', 'DESKTOP PLAYER · EMULATORJS 4.2.3').replace('Files stay in this browser; there is no upload endpoint.', 'Your games stay on this device. The emulator runtime is included; no server or account is required.').replace('Some cores require HTTPS and BIOS files.', 'Some systems require your own BIOS files. Export saves before moving devices.'))
+page.write_text(page.read_text(encoding='utf-8').replace('PRIVATE PLAYER · EMULATORJS 4.2.3', 'DESKTOP PLAYER · EMULATORJS 4.2.3').replace('Files stay in this browser; there is no upload endpoint.', 'Your games stay on this device. The emulator runtime is included; no server or account is required.').replace('Some cores require HTTPS and BIOS files.', 'Some systems require your own BIOS files. Export saves before moving devices.'), encoding='utf-8')
 print('Verified runtime and desktop player ready.', flush=True)

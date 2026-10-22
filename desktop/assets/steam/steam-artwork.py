@@ -100,7 +100,7 @@ def atomic_write(target, data):
 
 def install(root, name, slug, prefix, assets):
     if steam_running():
-        raise ValueError('Exit Steam first (Steam menu → Exit), then run this command again. No shortcuts were changed.')
+        raise ValueError('Exit Steam first (Steam menu > Exit), then run this command again. No shortcuts were changed.')
     profiles = sorted((root / 'userdata').glob('[0-9]*/config'))
     if not profiles:
         raise ValueError('No Steam profile found. Sign into Steam once, exit Steam, then retry.')
@@ -143,7 +143,7 @@ def install(root, name, slug, prefix, assets):
             for source, suffix in [('portrait.png', 'p.png'), ('landscape.png', '.png'), ('hero.png', '_hero.png'), ('logo.png', '_logo.png'), ('icon.png', '_icon.png')]:
                 atomic_write(config / 'grid' / (str(identifier) + suffix), (assets / source).read_bytes())
         print(name + ': shortcut and original artwork installed for Steam profile ' + config.parent.name)
-    print('Reopen Steam. Your shortcut is under Library → Non-Steam.')
+    print('Reopen Steam. Your shortcut is under Library > Non-Steam.')
 
 
 def main():

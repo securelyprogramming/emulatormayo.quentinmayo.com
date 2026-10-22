@@ -17,3 +17,4 @@ body.desktop #playing:not([hidden]){display:flex;flex:1;flex-direction:column;mi
 body.desktop #playing nav{flex-shrink:0;margin-bottom:8px;gap:12px;flex-direction:row;align-items:center}
 body.desktop #playing nav strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 body.desktop #game{flex:1;height:auto;min-height:0}
+body.desktop #game>.ejs_game,body.desktop #game>.ejs_canvas_parent{height:100%;width:100%}

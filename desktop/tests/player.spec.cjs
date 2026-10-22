@@ -50,7 +50,7 @@ test('Quit app can be cancelled and confirmed without clearing saves',async()=>{
  await app.evaluate(({dialog})=>{dialog.showMessageBox=async()=>({response:0});});
  await page.locator('#quit').click();await expect(page.locator('#gameFile')).toBeVisible();
  await app.evaluate(({dialog})=>{dialog.showMessageBox=async()=>({response:1});});
- const closed=app.waitForEvent('close');await page.locator('#quit').click();await closed;
+ const closed=app.waitForEvent('close');await page.locator('#quit').click({noWaitAfter:true}).catch(error=>{if(!/closed/.test(error.message))throw error;});await closed;expect(app.process().exitCode).toBe(0);
 });
 test('player toolbar forwards existing save hooks, refuses unavailable actions, and opens with F10',async()=>{
  await page.keyboard.press('F10');await expect(page.locator('#player-actions')).toBeVisible();

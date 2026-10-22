@@ -66,7 +66,7 @@ export const site = {
   "installEyebrow": "MACOS / WINDOWS / LINUX",
   "installTitle": "Ready when your next game is.",
   "installBody": "Download the installer for your device. Release notes and checksums are on GitHub.",
-  "compatibility": "Desktop apps use Electron with the bundled EmulatorJS runtime. Packages are unsigned; macOS apps are not notarized. Browser, core, BIOS and device compatibility vary. No Android APK is released yet; the self-hosted browser player remains available. Physical Steam Deck and controller testing is pending.",
+  "compatibility": "Desktop apps use Electron with the bundled EmulatorJS runtime. Mac apps are ad-hoc signed and not notarized; Windows installers are unsigned. Browser, core, BIOS and device compatibility vary. No Android APK is released yet; the self-hosted browser player remains available. Physical Steam Deck and controller testing is pending.",
   "faq": [
     {
       "question": "Is this the public game player?",
@@ -94,30 +94,30 @@ export const site = {
   "sisterUrl": "https://rommayo.quentinmayo.com",
   "seoTitle": "Emulatormayo | EmulatorJS for macOS, Windows & Linux",
   "supportUrl": "https://buymeacoffee.com/quentinmayo",
-  "downloadVersion": "v0.1.0 · Desktop alpha",
+  "downloadVersion": "v0.1.1 · Desktop alpha",
   "downloadIntro": "The EmulatorJS runtime is included. Install, choose your own game file and play. No Node.js, npm, Docker or server required.",
-  "releaseUrl": "https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/tag/desktop-v0.1.0",
+  "releaseUrl": "https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/tag/desktop-v0.1.1",
   "downloads": [
     {
       "label": "macOS · Apple Silicon",
       "detail": "M-series Macs · DMG",
-      "file": "https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.0/Emulatormayo-0.1.0-mac-arm64.dmg"
+      "file": "https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.1/Emulatormayo-0.1.1-mac-arm64.dmg"
     },
     {
       "label": "macOS · Intel",
       "detail": "Intel Macs · DMG",
-      "file": "https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.0/Emulatormayo-0.1.0-mac-x64.dmg"
+      "file": "https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.1/Emulatormayo-0.1.1-mac-x64.dmg"
     },
     {
       "label": "Windows",
       "detail": "x64 · installer",
-      "file": "https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.0/Emulatormayo-0.1.0-win-x64.exe"
+      "file": "https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.1/Emulatormayo-0.1.1-win-x64.exe"
     },
     {
       "label": "Linux / Steam Deck",
       "detail": "x64 · AppImage",
-      "file": "https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.0/Emulatormayo-0.1.0-linux-x86_64.AppImage"
+      "file": "https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.1/Emulatormayo-0.1.1-linux-x86_64.AppImage"
     }
   ],
-  "checksumsUrl": "https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.0/SHA256SUMS.txt"
+  "checksumsUrl": "https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.1/SHA256SUMS.txt"
 };

@@ -12,14 +12,14 @@ A public, login-free Next.js website for Emulatormayo. Dark library-inspired des
 
 | Platform | Download |
 | --- | --- |
-| macOS Apple Silicon | [Download DMG](https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.0/Emulatormayo-0.1.0-mac-arm64.dmg) |
-| macOS Intel | [Download DMG](https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.0/Emulatormayo-0.1.0-mac-x64.dmg) |
-| Windows x64 | [Download installer](https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.0/Emulatormayo-0.1.0-win-x64.exe) |
-| Linux x64 / Steam Deck | [Download AppImage](https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.0/Emulatormayo-0.1.0-linux-x86_64.AppImage) |
+| macOS Apple Silicon | [Download DMG](https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.1/Emulatormayo-0.1.1-mac-arm64.dmg) |
+| macOS Intel | [Download DMG](https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.1/Emulatormayo-0.1.1-mac-x64.dmg) |
+| Windows x64 | [Download installer](https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.1/Emulatormayo-0.1.1-win-x64.exe) |
+| Linux x64 / Steam Deck | [Download AppImage](https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.1/Emulatormayo-0.1.1-linux-x86_64.AppImage) |
 
-[Release notes & all assets](https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/tag/desktop-v0.1.0) · [SHA-256 checksums](https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.0/SHA256SUMS.txt) · [Desktop guide](desktop/README.md)
+[Release notes & all assets](https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/tag/desktop-v0.1.1) · [SHA-256 checksums](https://github.com/securelyprogramming/emulatormayo.quentinmayo.com/releases/download/desktop-v0.1.1/SHA256SUMS.txt) · [Desktop guide](desktop/README.md)
 
-Open the DMG or Windows installer. On Linux, make the AppImage executable; Steam Deck users can add it as a non-Steam app with `--deck`. Packages are unsigned and macOS apps are not notarized. Saves stay in the app's local profile; export backups before deleting app data or moving devices. Physical Steam Deck and controller testing is pending.
+Open the DMG or Windows installer. On Linux, make the AppImage executable; Steam Deck users can add it as a non-Steam app with `--deck`. Mac apps are ad-hoc signed and not notarized; Windows installers are unsigned. Saves stay in the app's local profile; export backups before deleting app data or moving devices. Physical Steam Deck and controller testing is pending.
 
 Prefer hosting it yourself? The optional **[private self-hosted browser player](selfhost/README.md)** remains available with Docker. It is separate from this public product website. No Android APK is released yet.
 

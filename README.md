@@ -33,7 +33,7 @@ Physical hardware checks recorded October 22, 2026. These are specific smoke tes
 | Device | Environment | Verified | Still to check |
 | --- | --- | --- | --- |
 | Samsung Galaxy S24 Ultra | Android 17 | Signed APK; native local library; C64 homebrew boot; touch controls and player toolbar visible. | Physical external-controller gameplay not verified. |
-| Retroid Pocket 5 | Android 13 | Signed APK; native landscape library; local C64 import and core boot; built-in controller detected. | Physical gameplay bindings still need per-core checks. |
+| Retroid Pocket 5 | Android 13 | Signed APK; native landscape library; local C64 import and core boot; built-in controller detected. | Owner reports Retroid gameplay D-pad/buttons do not respond; investigation in progress. |
 | Steam Deck | SteamOS, docked 1920 × 1080 | AppImage 0.1.2 installation; Desktop Mode C64 core boot; clickable toolbar pause/resume; confirmed Quit dialog; Steam artwork installed. | Gaming Mode gameplay and physical controls remain under test. |
 | MacBook Pro (Apple M4 Pro) | macOS, Apple Silicon | C64 core boot; visible player toolbar; pause/resume; save-state export. | Other emulator cores and systems are not certified. |
 

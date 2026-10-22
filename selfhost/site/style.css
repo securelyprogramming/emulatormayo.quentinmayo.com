@@ -8,3 +8,12 @@ body.deck .ejs_big_screen:has(.ejs_canvas_parent) .ejs_menu_bar,body.deck .ejs_s
 body.deck .ejs_big_screen:has(.ejs_canvas_parent) .ejs_menu_bar_hidden{transform:translateY(0)!important}
 body.deck .ejs_small_screen:has(.ejs_canvas_parent) .ejs_menu_bar_hidden{transform:translate(-50%,0)!important}
 body.deck .ejs_parent:has(.ejs_canvas_parent) .ejs_menu_bar .ejs_menu_button{min-width:36px;min-height:44px;touch-action:manipulation}
+/* Keep the game and its own toolbar above the fixed app controls. */
+body.desktop:has(#playing:not([hidden])){overflow:hidden}
+body.desktop:has(#playing:not([hidden])) main{height:calc(100dvh - 68px);display:flex;flex-direction:column;padding:12px 20px}
+body.desktop.controls-open:has(#playing:not([hidden])) main{height:calc(100dvh - 244px)}
+body.desktop:has(#playing:not([hidden])) header,body.desktop:has(#playing:not([hidden])) footer{display:none}
+body.desktop #playing:not([hidden]){display:flex;flex:1;flex-direction:column;min-height:0;padding:0}
+body.desktop #playing nav{flex-shrink:0;margin-bottom:8px;gap:12px;flex-direction:row;align-items:center}
+body.desktop #playing nav strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.desktop #game{flex:1;height:auto;min-height:0}

@@ -33,7 +33,7 @@ Physical hardware checks recorded October 22, 2026. These are specific smoke tes
 | Device | Environment | Verified | Still to check |
 | --- | --- | --- | --- |
 | Samsung Galaxy S24 Ultra | Android 17 | Signed APK; native local library; C64 homebrew boot; touch controls and player toolbar visible. | Physical external-controller gameplay not verified. |
-| Retroid Pocket 5 | Android 13 | Signed APK; native landscape library; local C64 import and core boot; built-in controller detected. | Owner reports Retroid gameplay D-pad/buttons do not respond; investigation in progress. |
+| Retroid Pocket 5 | Android 13 | Signed APK; native landscape library; local C64 import and core boot; built-in controller detected. | Native menu focus and gameplay forwarding fixes pass device automation; owner physical direction retest pending. |
 | Steam Deck | SteamOS, docked 1920 × 1080 | AppImage 0.1.2 installation; Desktop Mode C64 core boot; clickable toolbar pause/resume; confirmed Quit dialog; Steam artwork installed. | Gaming Mode gameplay and physical controls remain under test. |
 | MacBook Pro (Apple M4 Pro) | macOS, Apple Silicon | C64 core boot; visible player toolbar; pause/resume; save-state export. | Other emulator cores and systems are not certified. |
 
@@ -89,3 +89,5 @@ Follow the [illustrated Steam Deck guide](https://emulatormayo.quentinmayo.com/s
 ![Native Android library on Retroid Pocket 5 before import](public/screenshots/retroid-native-library.png)
 
 Focused [security review and limits](docs/security-review-2026-10-22.md).
+
+Android contributors: [controller menu validation](docs/android-controller-tests.md) covers focus movement and the physical handheld checklist.

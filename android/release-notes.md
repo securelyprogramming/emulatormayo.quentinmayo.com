@@ -1,6 +1,7 @@
-## Android controller input update
+## Android controller input and menu update
 
 - Forward the first connected Android gamepad’s buttons, D-pad, sticks and triggers to the local player using standard controller mappings. EmulatorJS Control Settings still handles remapping.
+- Move menu focus explicitly with D-pad or left stick, recover selection when switching input methods, and keep the current card selected when returning from game details.
 - Release held inputs when the app pauses, loses focus, disconnects its controller, or leaves the player.
 - Retroid Pocket 5: simulated Android-to-WebView input checks pass; owner physical gameplay retest remains pending. Multiple simultaneous native gameplay controllers are not implemented.
 

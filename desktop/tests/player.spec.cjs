@@ -69,7 +69,7 @@ test('player touch toggle preserves the original toolbar and preference, then co
  const handlers={}; window.EJS_emulator={started:true,virtualGamepad:pad,elements:{parent},toggleVirtualGamepad:show=>pad.style.display=show?'':'none',on:(event,callback)=>(handlers[event]??=[]).push(callback),callEvent:event=>(handlers[event]??[]).forEach(callback=>callback())};
 });
  const toggle=page.getByRole('button',{name:'Hide touch controls'});
- await expect(toggle).toBeVisible();await toggle.click();
+ await expect(toggle).toBeVisible();expect(await toggle.evaluate(b=>b.getBoundingClientRect().width<b.parentElement.getBoundingClientRect().width/2)).toBe(true);await toggle.click();
  await expect(page.locator('.ejs_virtualGamepad_parent')).toBeHidden();
  await expect(page.locator('#original-toolbar')).toBeVisible();
  await expect(page.getByRole('button',{name:'Show touch controls'})).toBeVisible();
